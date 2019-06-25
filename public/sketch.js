@@ -1,3 +1,8 @@
+// Create sinewave on screen
+// Sources:
+//  Setting canva width the same size as window: https://github.com/processing/p5.js/issues/193
+//  Sine wave: https://p5js.org/examples/math-sine-wave.html
+
 let xspacing = 16; // Distance between each horizontal location
 let w; // Width of entire wave
 let theta = 0.0; // Start angle at 0
