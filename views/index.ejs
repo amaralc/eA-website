@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>eA</title>
-        <style> body {padding: 0; margin: 0;} </style>        
+        <style> body {padding: 0; margin: 0;} </style>  
+		<script src="libraries/p5/p5.min.js"></script>
+        <script src="libraries/p5/addons/p5.dom.min.js"></script>
+        <script src="libraries/p5/addons/p5.sound.min.js"></script>		
     </head>
     <body>
         <h1>eA </h1>
@@ -12,5 +15,11 @@
         <p>24/06/2019 14:51 - eA: agradecimentos especiais a Leandro e Elias pelas dicas e palavras-chave.</p>
         <p>25/06/2019 15:18 - eA: tentando apontar para arquivo html</p>  
         <p><br> Rendered at <%= new Date() %> </p>
+
+        <button id = "myButton">Do Ajax!</button>
+
+        <script src = "sketch.js"></script>
+
+		<!--<script src="../public/sketch.js"></script>-->
     </body>
 </html>
