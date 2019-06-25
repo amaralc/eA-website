@@ -1,3 +1,23 @@
+var path = require('path');
+
+var express = require('express');
+
+var app = express();
+
+app.set('view engine', 'ejs');
+app.set('views',path.resolve(__dirname, 'views'));
+
+app.get('/', function(req,res){
+	res.render('index');
+});
+
+//app.post();
+
+
+app.listen(process.env.PORT || 3000);
+
+/*
+
 const http = require('http');
 const port = process.env.PORT || 3000
 const server = http.createServer((req, res) => {
@@ -8,3 +28,5 @@ const server = http.createServer((req, res) => {
 server.listen(port,() => {
 	console.log('Server running at port '+port);
 });
+
+*/
