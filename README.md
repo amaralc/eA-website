@@ -1,6 +1,6 @@
 # eA
 
-Objetivo: otimizar a maneira de se financiar, produzir e transmitir conhecimento.
+Objetivo: redesenhar a maneira de se financiar, produzir e transmitir conhecimento.
 
 *Datas estimadas*
 
