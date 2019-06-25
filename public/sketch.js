@@ -28,10 +28,10 @@ function draw() {
     calcWave();
     renderWave(); 
     
-    textSize(100);
+    textSize(200);
     textFont('Times New Roman');
     fill(0);
-    text('eA', innerWidth/2-50,innerHeight/2-50,100, 100);   
+    text('eA', innerWidth/2-50,innerHeight/2-50,200, 200);   
 
 }
 
@@ -48,13 +48,11 @@ function calcWave() {
   }
 }
 
-var xoff = 0;
 function renderWave() {
   noStroke();
+  fill(255); 
   
-  for (let x = 0; x < yvalues.length; x++) {
-    fill(map(x,0,yvalues.length,50,100), 200-map(x,0,yvalues.length,150,255), map(x,0,yvalues.length,200,255));       
+  for (let x = 0; x < yvalues.length; x++) {          
     ellipse(x * xspacing, height / 2 + yvalues[x], diameter, diameter);    
   }
-  xoff += 0.05;
 }
