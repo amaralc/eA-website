@@ -31,7 +31,7 @@ function draw() {
     textSize(200);
     textFont('Times New Roman');
     fill(0);
-    text('eA', innerWidth/2-50,innerHeight/2-50,200, 200);   
+    text('eA', innerWidth/2-50,innerHeight/2-65,200, 200);   
 
 }
 
