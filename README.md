@@ -13,4 +13,5 @@ Objetivo: otimizar a maneira de se financiar, produzir e transmitir conhecimento
 24/06/2019 14:51 - eA: agradecimentos especiais a Leandro e Elias pelas dicas e palavras-chave.
 25/06/2019 15:18 - eA: tentando apontar para arquivo html
 25/06/2019 16:33 - eA: primeiro deploy com p5js
+25/06/2019 18:50 - eA: homepage com onda roxa azulada e 'eA' no centro
 
