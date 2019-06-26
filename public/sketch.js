@@ -18,6 +18,7 @@ let diameter = xspacing;
 var canvas;
 let f = 1; // 1/period of sine wave
 let fkey = 0; // release key for frequency change
+let textKey = 0;
 
 
 function setup() {
@@ -37,6 +38,15 @@ function draw() {
     textFont('Times New Roman');
     fill(0);
     text('eA', w/2-100,h/2-80,200, 200);   
+
+    if(textKey == 0){
+
+      fill(255);
+      textSize(16);
+      textAlign(LEFT);
+      text('Clique e arraste', mouseX+5, mouseY)
+    } 
+    
 
 }
 
@@ -60,8 +70,18 @@ function calcWave() {
 }
 
 function renderWave() {
-  noStroke();
-  fill(255);   
+  noStroke();  
+  let R = 255;
+  let G = 255;
+  let B = 255;
+
+  if (fkey != 0){
+    R = map(mouseX, 0, window.innerWidth, 0,255);
+    G = map(mouseY, 0, window.innerWidth, 0,255);
+    B = map(mouseX*mouseY, 0, window.innerWidth*window.innerHeight, 0,255);
+  }
+
+  fill(R,G,B); 
   for (let x = 0; x < yvalues.length; x++) {          
     ellipse(x * xspacing, height / 2 + yvalues[x], diameter, diameter);    
   }
@@ -82,6 +102,7 @@ window.onresize = function() {
 
 function mousePressed(){    
   fkey = 1;
+  textKey = 1;
   return false;
 }
 
