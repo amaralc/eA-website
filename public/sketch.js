@@ -19,6 +19,9 @@ var canvas;
 let f = 1; // 1/period of sine wave
 let fkey = 0; // release key for frequency change
 let textKey = 0;
+let R = 255;
+let G = 255;
+let B = 255;
 
 
 function setup() {
@@ -58,7 +61,8 @@ function calcWave() {
   // Change wave oscillation frequency according to mouseY
   
   if(fkey != 0){
-    f = map(mouseY,0,window.innerHeight,0.5,1.5);
+    f = map(mouseX,0,window.innerWidth,0.5,1.5);
+    amplitude = map(mouseY, 0, window.innerHeight, window.innerHeight/4,0)
   }  
 
   // For every x value, calculate a y value with sine function
@@ -71,9 +75,7 @@ function calcWave() {
 
 function renderWave() {
   noStroke();  
-  let R = 255;
-  let G = 255;
-  let B = 255;
+  
 
   if (fkey != 0){
     R = map(mouseX, 0, window.innerWidth, 0,255);
