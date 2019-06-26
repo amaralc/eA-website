@@ -62,7 +62,7 @@ function calcWave() {
   
   if(fkey != 0){
     f = map(mouseX,0,window.innerWidth,0.5,1.5);
-    amplitude = map(mouseY, 0, window.innerHeight, window.innerHeight/4,0)
+    amplitude = map(mouseY, 0, window.innerHeight,window.innerHeight/5 ,0)
   }  
 
   // For every x value, calculate a y value with sine function
@@ -78,9 +78,9 @@ function renderWave() {
   
 
   if (fkey != 0){
-    R = map(mouseX, 0, window.innerWidth, 0,255);
+    R = map(mouseX, 0, window.innerWidth, 50,150);
     G = map(mouseY, 0, window.innerWidth, 0,255);
-    B = map(mouseX*mouseY, 0, window.innerWidth*window.innerHeight, 0,255);
+    B = map(mouseX, 0, window.innerWidth, 0,255);
   }
 
   fill(R,G,B); 
