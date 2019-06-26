@@ -16,6 +16,8 @@ let dx; // Value for incrementing x
 let yvalues; // Using an array to store height values for the wave
 let diameter = xspacing;
 var canvas;
+let f = 1; // 1/period of sine wave
+let fkey = 0; // release key for frequency change
 
 
 function setup() {
@@ -34,7 +36,7 @@ function draw() {
     textSize(200);
     textFont('Times New Roman');
     fill(0);
-    text('eA', w/2-50,h/2-65,200, 200);   
+    text('eA', w/2-100,h/2-80,200, 200);   
 
 }
 
@@ -43,10 +45,16 @@ function calcWave() {
   // 'angular velocity' here)
   theta += 0.02;
 
+  // Change wave oscillation frequency according to mouseY
+  
+  if(fkey != 0){
+    f = map(mouseY,0,window.innerHeight,0.5,1.5);
+  }  
+
   // For every x value, calculate a y value with sine function
   let x = theta;
   for (let i = 0; i < yvalues.length; i++) {
-    yvalues[i] = sin(x) * amplitude;
+    yvalues[i] = sin(x*f) * amplitude;
     x += dx;
   }
 }
@@ -71,3 +79,14 @@ window.onresize = function() {
   dx = (TWO_PI / period) * xspacing;
   yvalues = new Array(floor(w_plus_diameter / xspacing));
 };
+
+function mousePressed(){    
+  fkey = 1;
+  return false;
+}
+
+function mouseReleased(){    
+  fkey = 0;
+  return false;
+}
+    
