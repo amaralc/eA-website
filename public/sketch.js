@@ -61,7 +61,7 @@ function calcWave() {
   // Change wave oscillation frequency according to mouseY
   
   if(fkey != 0){
-    f = map(mouseX,0,window.innerWidth,0.5,1.5);
+    f = map(mouseX,0,window.innerWidth,0.75,1.25);
     amplitude = map(mouseY, 0, window.innerHeight,window.innerHeight/5 ,0)
   }  
 
