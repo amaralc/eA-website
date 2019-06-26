@@ -6,20 +6,23 @@
 //  Image: 
 
 let xspacing = 20; // Distance between each horizontal location
-let w; // Width of entire wave
+let w_plus_diameter; // Width of entire wave
+let w = innerWidth; // Canvas width equal window width
+let h = innerHeight; // Canvas height equal window height
 let theta = 0.0; // Start angle at 0
 let amplitude = 75.0; // Height of wave
 let period = 500.0; // How many pixels before the wave repeats
 let dx; // Value for incrementing x
 let yvalues; // Using an array to store height values for the wave
 let diameter = xspacing;
+var canvas;
 
 
 function setup() {
-    createCanvas(innerWidth, innerHeight); 
-    w = innerWidth + diameter;
+    canvas = createCanvas(window.innerWidth, window.innerHeight);
+    w_plus_diameter = window.innerWidth + diameter;
     dx = (TWO_PI / period) * xspacing;
-    yvalues = new Array(floor(w / xspacing));      
+    yvalues = new Array(floor(w_plus_diameter / xspacing));      
 
 }
 
@@ -31,7 +34,7 @@ function draw() {
     textSize(200);
     textFont('Times New Roman');
     fill(0);
-    text('eA', innerWidth/2-50,innerHeight/2-65,200, 200);   
+    text('eA', w/2-50,h/2-65,200, 200);   
 
 }
 
@@ -50,9 +53,21 @@ function calcWave() {
 
 function renderWave() {
   noStroke();
-  fill(255); 
-  
+  fill(255);   
   for (let x = 0; x < yvalues.length; x++) {          
     ellipse(x * xspacing, height / 2 + yvalues[x], diameter, diameter);    
   }
 }
+
+window.onresize = function() {
+  w = window.innerWidth;
+  h = window.innerHeight;  
+  canvas.size(w,h);
+  width = w;
+  height = h;
+
+  // Redimension values for sine wave
+  w_plus_diameter = w + diameter;
+  dx = (TWO_PI / period) * xspacing;
+  yvalues = new Array(floor(w_plus_diameter / xspacing));
+};
